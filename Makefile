@@ -22,7 +22,7 @@ protoc-go-hello:
 protoc-go-bank:
 	protoc --go_opt=module=${GO_MODULE} --go_out=. \
 	--go-grpc_opt=module=${GO_MODULE} --go-grpc_out=. \
-	./proto/bank/*.proto \
+	./proto/bank/*.proto ./proto/bank/type/*.proto \
 
 .PHONY: build
 build: clean protoc-go-hello protoc-go-bank
